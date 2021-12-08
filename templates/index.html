@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Melee Characters</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+			{% for aChar, anInfo in infos.items() %}
+			<a href="/stats/{{ aChar }}"><img src='{{ anInfo["img"] }}'></a>
+			{% endfor %}
+		</div>
+	</body>
+</html>

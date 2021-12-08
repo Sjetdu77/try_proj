@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>All stats</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th>Character</th>
+				{%- for aStat in infos["Mario"] -%}
+				{%- if aStat != 'img' and aStat != 'icon' -%}
+				<th>{{ aStat }}</th>
+				{%- endif -%}
+				{%- endfor -%}
+			</tr>
+			{%- for aChar, crStats in infos.items() -%}
+			<tr>
+				<th><img src="{{ crStats['icon'] }}"></th>
+				{%- for aStat, tsStat in crStats.items() -%}
+				{%- if aStat != 'img' and aStat != 'icon' -%}
+				<td>{{ tsStat }}</th>
+				{%- endif -%}
+				{%- endfor -%}
+			</tr>
+			{%- endfor -%}
+		</table>
+	</body>
+
+	<style>
+		td, th { border: 1px solid black; }
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+	</style>
+</html>
